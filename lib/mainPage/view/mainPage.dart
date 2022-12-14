@@ -8,8 +8,10 @@ import 'package:parking/mainPage/view/accnt_settings.dart';
 import 'package:parking/mainPage/view/profile.dart';
 import 'package:parking/mainPage/view/widget/near_space.dart';
 import 'package:parking/mainPage/view/widget/parking_dtls.dart';
-import 'package:parking/myBookings/view/vehclDetails.dart';
+
 import 'package:parking/status_page/view/statusPage.dart';
+
+import '../../myBookings/view/my_booking.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -36,7 +38,7 @@ class _HomePageState extends State<MainPage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Profile(),
+                          builder: (context) => ProfileDemo(),
                         ));
                   },
                   child: Padding(
@@ -133,13 +135,15 @@ Parking space
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const StatusPage(),
+                              builder: (context) => StatusPage(),
                             ),
                           );
                         },
                         child: ParkingDtls(
-                          icn: Icons.change_history_outlined,
-                          name: 'Status',
+                          icn: Icons.now_widgets_sharp,
+                          name: '''
+
+Wish List''',
                         ),
                       ),
                       SizedBox(
@@ -179,11 +183,6 @@ services''',
                       return NearSpace();
                     },
                   )),
-                  Container(
-                    height: 100.h,
-                    width: 355.w,
-                    color: Colors.black,
-                  )
                 ],
               ),
             )

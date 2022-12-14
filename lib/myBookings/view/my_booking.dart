@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
+
 import 'package:google_fonts/google_fonts.dart';
-import 'package:parking/myBookings/view/bookingsDetails.dart';
+
+import 'package:parking/mainPage/view/widget/my_bookings.dart';
+
+import 'package:parking/myBookings/view/history.dart';
+import 'package:parking/myBookings/view/widget/my_bookings.dart';
 
 class MyBookings extends StatefulWidget {
   const MyBookings({super.key});
@@ -15,13 +19,14 @@ class MyBookings extends StatefulWidget {
 
 class _MyBookingsState extends State<MyBookings> {
   List<String> item = ['Ongoing', 'History', 'Cancelled'];
-  List<Widget> data = [MyBookings(), MyBookings(), MyBookings()];
+  List<Widget> data = [BookingWidget(), History(), History()];
 
   int current = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 76, 150, 115),
         title: Text(
           'My Booking',
           style: GoogleFonts.laila(fontWeight: FontWeight.w500),
@@ -70,16 +75,17 @@ class _MyBookingsState extends State<MyBookings> {
                                   blurRadius: 4,
                                   color: Color.fromARGB(255, 100, 99, 99))
                             ],
-                            color:
-                                current == index ? Colors.yellow : Colors.white,
+                            color: current == index
+                                ? Colors.white
+                                : Color.fromARGB(255, 250, 248, 248),
                             borderRadius: current == index
                                 ? BorderRadius.circular(17)
                                 : BorderRadius.circular(17),
                             border: current == index
                                 ? null
                                 : Border.all(
-                                    color: Color.fromARGB(255, 47, 47, 47),
-                                    width: 2,
+                                    color: Color.fromARGB(255, 164, 163, 163),
+                                    width: 2.w,
                                   ),
                           ),
                           child: Center(
@@ -98,7 +104,7 @@ class _MyBookingsState extends State<MyBookings> {
               ),
             ),
             Container(
-              height: 495,
+              height: 495.h,
               width: double.infinity,
               child: Column(
                 children: [
@@ -109,6 +115,19 @@ class _MyBookingsState extends State<MyBookings> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class Test extends StatelessWidget {
+  const Test({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 40.h,
+      width: 40.w,
+      color: Colors.yellow,
     );
   }
 }

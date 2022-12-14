@@ -3,14 +3,14 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Profile extends StatefulWidget {
-  const Profile({super.key});
+class ProfileDemo extends StatefulWidget {
+  const ProfileDemo({super.key});
 
   @override
-  State<Profile> createState() => _MyWidgetState();
+  State<ProfileDemo> createState() => _MyWidgetState();
 }
 
-class _MyWidgetState extends State<Profile> {
+class _MyWidgetState extends State<ProfileDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

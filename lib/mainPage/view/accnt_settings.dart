@@ -10,6 +10,8 @@ import 'package:parking/mainPage/view/pages/settings_pages/feedback.dart';
 import 'package:parking/mainPage/view/pages/settings_pages/history.dart';
 import 'package:parking/mainPage/view/pages/settings_pages/my_vehicle.dart';
 import 'package:parking/mainPage/view/pages/settings_pages/payment/payment.dart';
+import 'package:parking/mainPage/view/profile.dart';
+import 'package:parking/mainPage/view/pages/settings_pages/profile.dart';
 import 'package:parking/mainPage/view/widget/settings_tile.dart';
 
 class AccntSettings extends StatelessWidget {
@@ -43,36 +45,25 @@ class AccntSettings extends StatelessWidget {
                 child: Column(
                   children: [
                     Setting_tile(
+                      ontap: Profile(),
                         icn: Icons.person,
                         arrow: Icons.arrow_forward_ios,
-                        name: 'My account'),
-                    InkWell(
-                      onTap: () {
-                        Get.to(MyVehicle());
-                      },
-                      child: Setting_tile(
-                          icn: Icons.car_crash,
-                          arrow: Icons.arrow_forward_ios,
-                          name: 'My vehicles'),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        Get.to(PaymentPage());
-                      },
-                      child: Setting_tile(
-                          icn: Icons.add_card_sharp,
-                          arrow: Icons.arrow_forward_ios,
-                          name: 'My cards'),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        Get.to(ParkingHistory());
-                      },
-                      child: Setting_tile(
-                        icn: Icons.history,
+                        name: 'My Profile'),
+                    Setting_tile(
+                      ontap:  MyVehicle(),
+                        icn: Icons.car_crash,
                         arrow: Icons.arrow_forward_ios,
-                        name: 'Parking history',
-                      ),
+                        name: 'My vehicles'),
+                    Setting_tile(
+                      ontap: PaymentPage(),
+                        icn: Icons.add_card_sharp,
+                        arrow: Icons.arrow_forward_ios,
+                        name: 'My cards'),
+                    Setting_tile(
+                      ontap: ParkingHistory(),
+                      icn: Icons.history,
+                      arrow: Icons.arrow_forward_ios,
+                      name: 'Parking history',
                     ),
                     Setting_tile(
                       icn: Icons.fingerprint,

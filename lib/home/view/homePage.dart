@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:parking/signUp/view/signupPage.dart';
 
-import '../../sign_in/views/sign.dart';
+import '../../sign_in/views/signIn.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});

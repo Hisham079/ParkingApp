@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:parking/home/view/homePage.dart';
 
-import 'package:parking/sign_in/views/sign.dart';
+import 'package:parking/sign_in/views/signIn.dart';
 
 import '../../sign_in/bloc/authentication_bloc.dart';
 
