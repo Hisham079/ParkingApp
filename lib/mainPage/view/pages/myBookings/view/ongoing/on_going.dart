@@ -6,10 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../time.dart';
+import 'time.dart';
 
-class BookingWidget extends StatelessWidget {
-  const BookingWidget({super.key});
+class OnGoing extends StatelessWidget {
+  const OnGoing({super.key});
 
   @override
   Widget build(BuildContext context) {

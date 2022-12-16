@@ -30,6 +30,7 @@ class _ExtendTimeState extends State<ExtendTime> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 76, 150, 115),
         title: Text('Extend Parking Time'),
       ),
       body: Column(
@@ -63,6 +64,7 @@ class _ExtendTimeState extends State<ExtendTime> {
                   height: 30.h,
                   width: 38.w,
                   child: OutlinedButton(
+                    style: ButtonStyle(backgroundColor: MaterialStatePropertyAll( Color.fromARGB(255, 76, 150, 115))),
                       onPressed: _incrementcount, child: Text('+')),
                 ),
               ],
@@ -75,11 +77,8 @@ class _ExtendTimeState extends State<ExtendTime> {
               style: GoogleFonts.radioCanada(
                   fontSize: 16.sp, fontWeight: FontWeight.w500),
             ),
-
           ),
-          ElevatedButton(onPressed: () {
-            
-          }, child: Text('Razoo Pay'))
+          ElevatedButton(style: ButtonStyle(backgroundColor: MaterialStatePropertyAll( Color.fromARGB(255, 76, 150, 115))),onPressed: () {}, child: Text('Razoo Pay'))
         ],
       ),
     );

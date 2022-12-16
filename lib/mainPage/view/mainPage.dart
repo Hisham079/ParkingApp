@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:parking/mainPage/view/accnt_settings.dart';
-import 'package:parking/mainPage/view/profile.dart';
+import 'package:parking/mainPage/view/pages/myBookings/view/my_booking.dart';
+import 'package:parking/mainPage/view/pages/parking_dtls/padking_detls.dart';
+import 'package:parking/mainPage/view/pages/settings_pages/setting_page.dart';
 import 'package:parking/mainPage/view/widget/near_space.dart';
-import 'package:parking/mainPage/view/widget/parking_dtls.dart';
-
-import 'package:parking/status_page/view/statusPage.dart';
-
-import '../../myBookings/view/my_booking.dart';
+import 'package:parking/mainPage/view/widget/category.dart';
+import 'package:parking/mainPage/view/pages/wish_list/wish_list.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -33,20 +32,10 @@ class _HomePageState extends State<MainPage> {
           children: [
             Row(
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ProfileDemo(),
-                        ));
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: CircleAvatar(
-                      backgroundImage:
-                          AssetImage('Assets/images/carparking.jpg'),
-                    ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage('Assets/images/carparking.jpg'),
                   ),
                 ),
                 Text(
@@ -58,7 +47,7 @@ class _HomePageState extends State<MainPage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => AccntSettings(),
+                          builder: (context) => SettingsPage(),
                         ));
                   },
                   child: Padding(
@@ -122,7 +111,7 @@ Parking space
                             MaterialPageRoute(
                               builder: (context) => MyBookings(),
                             )),
-                        child: ParkingDtls(icn: Icons.local_parking, name: '''
+                        child: Category(icn: Icons.local_parking, name: '''
  
   My Booking
                         '''),
@@ -135,11 +124,11 @@ Parking space
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => StatusPage(),
+                              builder: (context) => WishList(),
                             ),
                           );
                         },
-                        child: ParkingDtls(
+                        child: Category(
                           icn: Icons.now_widgets_sharp,
                           name: '''
 
@@ -157,7 +146,7 @@ Wish List''',
                                 builder: (context) => MainPage(),
                               ));
                         },
-                        child: ParkingDtls(
+                        child: Category(
                           icn: Icons.align_horizontal_left_sharp,
                           name: '''
 Other
@@ -180,7 +169,11 @@ services''',
                       child: ListView.builder(
                     itemCount: 3,
                     itemBuilder: (context, index) {
-                      return NearSpace();
+                      return GestureDetector(
+                          onTap: () {
+                            Get.to(ParkingDetls());
+                          },
+                          child: NearSpace());
                     },
                   )),
                 ],

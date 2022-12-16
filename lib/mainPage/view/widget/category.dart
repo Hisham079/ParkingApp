@@ -4,8 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
-class ParkingDtls extends StatelessWidget {
-  ParkingDtls({super.key, required this.icn, required this.name});
+class Category extends StatelessWidget {
+  Category({super.key, required this.icn, required this.name});
   IconData icn;
   String name;
 

@@ -5,10 +5,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:parking/mainPage/view/widget/my_bookings.dart';
 
-import 'package:parking/myBookings/view/history.dart';
-import 'package:parking/myBookings/view/widget/my_bookings.dart';
+
+
+
+import 'history.dart';
+import 'ongoing/on_going.dart';
 
 class MyBookings extends StatefulWidget {
   const MyBookings({super.key});
@@ -19,7 +21,7 @@ class MyBookings extends StatefulWidget {
 
 class _MyBookingsState extends State<MyBookings> {
   List<String> item = ['Ongoing', 'History', 'Cancelled'];
-  List<Widget> data = [BookingWidget(), History(), History()];
+  List<Widget> data = [OnGoing(), History(), History()];
 
   int current = 0;
   @override

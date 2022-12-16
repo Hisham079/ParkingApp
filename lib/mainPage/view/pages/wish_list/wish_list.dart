@@ -6,20 +6,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class StatusPage extends StatefulWidget {
-  StatusPage({super.key});
+class WishList extends StatefulWidget {
+  WishList({super.key});
 
   @override
-  State<StatusPage> createState() => _StatusPageState();
+  State<WishList> createState() => _StatusPageState();
 }
 
-class _StatusPageState extends State<StatusPage> {
+class _StatusPageState extends State<WishList> {
   int current = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor:  Color.fromARGB(255, 76, 150, 115),
         title: Text('My Wish List'),
       ),
       body: Column(children: [
@@ -88,7 +89,7 @@ class _StatusPageState extends State<StatusPage> {
                               Column(
                                 children: [
                                   SizedBox(
-                                    height: 13,
+                                    height: 13.h,
                                   ),
                                   Text('Booking ID:P0346571655',
                                       style: GoogleFonts.laila(

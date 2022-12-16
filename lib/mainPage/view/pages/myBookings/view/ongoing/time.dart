@@ -5,9 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'package:parking/myBookings/view/widget/time_details.dart';
-
+import '../widget/time_details.dart';
 import 'extend_time.dart';
 
 class Time extends StatelessWidget {
@@ -25,10 +23,13 @@ class Time extends StatelessWidget {
           Container(
             height: 200.h,
             width: 300.w,
-            decoration: BoxDecoration(boxShadow: [
-              BoxShadow(
-                  blurRadius: 15, color: Color.fromARGB(255, 238, 236, 236))
-            ], borderRadius: BorderRadius.circular(12.r), color: Colors.white54),
+            decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                      blurRadius: 15, color: Color.fromARGB(255, 238, 236, 236))
+                ],
+                borderRadius: BorderRadius.circular(12.r),
+                color: Colors.white54),
             child: Center(
               child: Text(
                 '16:09',
