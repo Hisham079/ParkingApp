@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -17,9 +18,11 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
-  final email = TextEditingController();
-  final password = TextEditingController();
-  final uname = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _lnameController = TextEditingController();
+  final _fnameController = TextEditingController();
+  final _ageController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +45,6 @@ class _SignupState extends State<Signup> {
               ),
             );
           }
-        
         },
         child: Scaffold(
           // appBar: AppBar(
@@ -69,55 +71,70 @@ class _SignupState extends State<Signup> {
                       width: 452.w,
                       child: Column(
                         children: [
-                          Row(
-                            children: [
-                              Container(
-                                padding: EdgeInsets.only(left: 40, top: 30),
-                                height: 110.h,
-                                width: 150.w,
-                                child: Text(
-                                  'New Account',
-                                  style: TextStyle(
-                                      fontSize: 29.sp,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),
-                                ),
-                              ),
-                            ],
-                          ),
                           Expanded(
                             child: Container(
-                              height: MediaQuery.of(context).size.height - 80.h,
-                              width: MediaQuery.of(context).size.width - 80.w,
+                              height: 350.h,
+                              width: 330.w,
                               child: ListView(
-                                scrollDirection: Axis.vertical,
                                 children: [
-                                  Text('Email'),
-                                  TextField(
-                                    controller: email,
-                                    decoration: InputDecoration(
-                                        icon: Icon(Icons.mail_outline),
-                                        hintText: 'abcd@gmail.com'),
+                                  SizedBox(
+                                    height: 90,
+                                    child: Text(
+                                      '''
+New 
+Account''',
+                                      style: TextStyle(
+                                          fontSize: 29.sp,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 40,
+                                    child: CupertinoTextField(
+                                      controller: _fnameController,
+                                      placeholder: 'first name',
+                                    ),
                                   ),
                                   SizedBox(
                                     height: 10.h,
                                   ),
-                                  Text('Username'),
-                                  TextField(
-                                    controller: uname,
-                                    decoration: InputDecoration(
-                                        icon: Icon(Icons.person),
-                                        hintText: 'Alice'),
+                                  SizedBox(
+                                    height: 40,
+                                    child: CupertinoTextField(
+                                      controller: _lnameController,
+                                      placeholder: 'last name',
+                                    ),
                                   ),
                                   SizedBox(
                                     height: 10.h,
                                   ),
-                                  Text('Password'),
-                                  TextField(
-                                    controller: password,
-                                    decoration: InputDecoration(
-                                        icon: Icon(Icons.key),
-                                        hintText: '*****'),
+                                  SizedBox(
+                                    height: 40,
+                                    child: CupertinoTextField(
+                                      controller: _emailController,
+                                      placeholder: 'Email',
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10.h,
+                                  ),
+                                  SizedBox(
+                                    height: 40,
+                                    child: CupertinoTextField(
+                                      controller: _ageController,
+                                      placeholder: 'Age',
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10.h,
+                                  ),
+                                  SizedBox(
+                                    height: 40,
+                                    child: CupertinoTextField(
+                                      controller: _passwordController,
+                                      placeholder: 'Password',
+                                    ),
                                   ),
                                   SizedBox(
                                     height: 30.h,
@@ -140,10 +157,11 @@ class _SignupState extends State<Signup> {
                                           child: GestureDetector(
                                             onTap: () {
                                               auth_bloc.add(UserRegisterEvent(
-                                                  email: email.text,
-                                                  password: password.text));
+                                                  email: _emailController.text,
+                                                  password: _passwordController
+                                                      .text));
                                             },
-                                            child:  Text(
+                                            child: Text(
                                               'Sign up',
                                               style: TextStyle(
                                                   color: Colors.white,
@@ -170,86 +188,3 @@ class _SignupState extends State<Signup> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Container(
-      //   color: Color.fromARGB(255, 227, 227, 227),
-      //   child: Column(
-      //     children: [
-      //       Container(
-      //         margin: EdgeInsets.all(12),
-      //         height: 40,
-      //         width: 375,
-      //         decoration: BoxDecoration(
-      //           borderRadius: BorderRadius.circular(9),
-      //           color: Color.fromARGB(255, 253, 253, 253),
-      //         ),
-      //         child: TextField(
-      //           decoration: InputDecoration(
-      //               hintText: '  Email address', border: InputBorder.none),
-      //         ),
-      //       ),
-      //       Container(
-      //         margin: EdgeInsets.all(12),
-      //         height: 40,
-      //         width: 375,
-      //         decoration: BoxDecoration(
-      //           borderRadius: BorderRadius.circular(9),
-      //           color: Color.fromARGB(255, 253, 253, 253),
-      //         ),
-      //         child: TextField(
-      //           decoration: InputDecoration(
-      //               hintText: '  Mobile number', border: InputBorder.none),
-      //         ),
-      //       ),
-      //       Container(
-      //         margin: EdgeInsets.all(12),
-      //         height: 40,
-      //         width: 375,
-      //         decoration: BoxDecoration(
-      //           borderRadius: BorderRadius.circular(9),
-      //           color: Color.fromARGB(255, 253, 253, 253),
-      //         ),
-      //         child: TextField(
-      //           decoration: InputDecoration(
-      //               hintText: '  Set a password', border: InputBorder.none),
-      //         ),
-      //       ),
-      //       ElevatedButton(onPressed: (() {}), child: Text('Signup')),
-      //       GestureDetector(
-      //           onTap: () {
-      //             Navigator.push(
-      //                 context,
-      //                 MaterialPageRoute(
-      //                   builder: (context) => Loginpage(),
-      //                 ));
-      //           },
-      //           child: Text('or Login ?'))
-      //     ],
-      //   ),
-      // ),
-
-
-
-
-
-
-
-
-
-
-
