@@ -12,9 +12,5 @@ class LoginFailed extends AuthenticationState {
   LoginFailed({required this.error_message});
 }
 
-class RegisterSuccess extends AuthenticationState {}
 
-class RegisterFailed extends AuthenticationState {
-  String error_message;
-  RegisterFailed({required this.error_message});
-}
+

@@ -4,11 +4,10 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:parking/home/view/homePage.dart';
 
 import 'package:parking/sign_in/views/signIn.dart';
-
 import '../../sign_in/bloc/authentication_bloc.dart';
+import '../bloc/signup_bloc.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -158,8 +157,12 @@ Account''',
                                             onTap: () {
                                               auth_bloc.add(UserRegisterEvent(
                                                   email: _emailController.text,
-                                                  password: _passwordController
-                                                      .text));
+                                                  password:
+                                                      _passwordController.text,
+                                                  age: _ageController.text,
+                                                  fname: _fnameController.text,
+                                                  lname:
+                                                      _lnameController.text));
                                             },
                                             child: Text(
                                               'Sign up',

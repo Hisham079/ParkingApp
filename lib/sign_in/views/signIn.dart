@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -35,7 +34,7 @@ class _LoginpageState extends State<Loginpage> {
                 MaterialPageRoute(
                   builder: (context) => MainPage(),
                 ));
-          } else if(state is LoginFailed){
+          } else if (state is LoginFailed) {
             ScaffoldMessenger.of(context)
                 .showSnackBar(SnackBar(content: Text(state.error_message)));
           }
@@ -94,7 +93,7 @@ class _LoginpageState extends State<Loginpage> {
                                         icon: Icon(Icons.mail_outline),
                                         hintText: 'abcd@gmail.com'),
                                   ),
-                                   SizedBox(
+                                  SizedBox(
                                     height: 10.h,
                                   ),
                                   const Text('Password'),
@@ -112,8 +111,8 @@ class _LoginpageState extends State<Loginpage> {
                                     //color: Colors.white,
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
-                                        backgroundColor:
-                                       const     Color.fromARGB(255, 234, 141, 59),
+                                        backgroundColor: const Color.fromARGB(
+                                            255, 234, 141, 59),
                                         minimumSize: Size(270, 50),
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
@@ -125,11 +124,12 @@ class _LoginpageState extends State<Loginpage> {
                                         onTap: () {
                                           auth_bloc.add(
                                             UserLoginEvent(
-                                                email: _loginemail.text,
-                                                password: _loginpassword.text),
+                                              email: _loginemail.text,
+                                              password: _loginpassword.text,
+                                            ),
                                           );
                                         },
-                                        child:  Text(
+                                        child: Text(
                                           'Sign in',
                                           style: TextStyle(
                                             color: Colors.white,
@@ -139,7 +139,7 @@ class _LoginpageState extends State<Loginpage> {
                                       ),
                                     ),
                                   ),
-                                 // Text('sign in with')
+                                  // Text('sign in with')
                                 ],
                               ),
                             ),

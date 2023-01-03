@@ -37,11 +37,7 @@ class _ParkingDetlsState extends State<ParkingDetls> {
                 height: 300.h,
                 width: 375.w,
               ),
-              const ListTile(
-                title: Text('HiLite Parking'),
-                subtitle: Text('5th,Calicut,Poovangal,Kerala 673014'),
-                trailing: Text('20 Slots'),
-              ),
+              const SlotRemain(),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -75,5 +71,17 @@ class _ParkingDetlsState extends State<ParkingDetls> {
         ontap: BookingConfirmation(),
       ),
     );
+  }
+}
+class SlotRemain extends StatelessWidget {
+  const SlotRemain({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+                title: Text('HiLite Parking'),
+                subtitle: Text('5th,Calicut,Poovangal,Kerala 673014'),
+                trailing: Text('20 Slots'),
+              );
   }
 }

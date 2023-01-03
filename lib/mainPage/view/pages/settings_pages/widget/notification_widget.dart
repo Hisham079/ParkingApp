@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
 class Notifictn_wdgt extends StatelessWidget {
   Notifictn_wdgt(
@@ -10,11 +11,15 @@ class Notifictn_wdgt extends StatelessWidget {
       required this.name,
       required this.data,
       required this.icn,
-      this.clr});
+      this.clr,
+      this.ontap,
+      this.btn_name});
   String name;
   String data;
   IconData icn;
   Color? clr;
+  String? btn_name;
+  Widget? ontap;
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +46,11 @@ class Notifictn_wdgt extends StatelessWidget {
           ),
           title: Text(name),
           subtitle: Text(data),
+          trailing: TextButton(
+              onPressed: () {
+                Get.to(ontap);
+              },
+              child: Text(btn_name.toString())),
         ),
       ),
     );

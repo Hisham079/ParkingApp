@@ -13,6 +13,8 @@ class PaymentPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 76, 150, 115),
+      
         title: Text('Payment Methods'),
         actions: [
           IconButton(
