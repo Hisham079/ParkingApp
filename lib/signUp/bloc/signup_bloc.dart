@@ -30,9 +30,9 @@ class SignupBloc extends Bloc<AuthenticationEvent, AuthenticationState> {
               age: event.age,
               id: userCredential.user!.uid.toString());
           await _storing.saveUserDetails(user: user);
-          String fname;
-          String lname;
-          int age;
+          // String fname;
+          // String lname;
+          // int age;
 
           emit(RegisterSuccess());
          

@@ -20,7 +20,7 @@ class MyBookings extends StatefulWidget {
 }
 
 class _MyBookingsState extends State<MyBookings> {
-  List<String> item = ['Ongoing', 'History', 'Cancelled'];
+  List<String> item = ['Bookings', 'History', 'Cancelled'];
   List<Widget> data = [OnGoing(), History(), History()];
 
   int current = 0;

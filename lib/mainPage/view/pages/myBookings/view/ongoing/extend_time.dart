@@ -78,7 +78,10 @@ class _ExtendTimeState extends State<ExtendTime> {
                   fontSize: 16.sp, fontWeight: FontWeight.w500),
             ),
           ),
-          ElevatedButton(style: ButtonStyle(backgroundColor: MaterialStatePropertyAll( Color.fromARGB(255, 76, 150, 115))),onPressed: () {}, child: Text('Razoo Pay'))
+          ElevatedButton(style: const ButtonStyle(
+            backgroundColor:
+             MaterialStatePropertyAll( Color.fromARGB(255, 76, 150, 115),),
+             ),onPressed: () {}, child: const Text('Razoo Pay'),)
         ],
       ),
     );

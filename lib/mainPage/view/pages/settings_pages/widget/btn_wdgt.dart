@@ -11,20 +11,20 @@ class BtnWdgt extends StatelessWidget {
       required this.name,
       required this.raduis,
       required this.clr,
-      this.ontap});
+      this.ontap,
+      required this.textClr});
   String name;
   int raduis;
   Color clr;
-  Widget? ontap;
+  void Function()? ontap;
+  Color textClr;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
-        onTap: () {
-          Get.to(ontap);
-        },
+        onTap: ontap,
         child: Container(
             height: 40.h,
             width: 343.w,
@@ -40,7 +40,9 @@ class BtnWdgt extends StatelessWidget {
                 child: Text(
               name,
               style: GoogleFonts.laila(
-                  fontSize: 16.sp, fontWeight: FontWeight.w500),
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
+                  color:textClr),
             ))),
       ),
     );

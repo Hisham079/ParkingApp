@@ -95,11 +95,14 @@ class ParkingTicket extends StatelessWidget {
                 ),
               ),
               BtnWdgt(
+                textClr: Colors.black,
                 name: 'Get Direction',
                 raduis: 10,
                 clr: Color.fromARGB(255, 76, 150, 115),
               ),
-              BtnWdgt(name: 'Not Now', raduis: 10, clr: Colors.white)
+              BtnWdgt(
+                textClr: Colors.black,
+                name: 'Not Now', raduis: 10, clr: Colors.white)
             ],
           ),
         ),

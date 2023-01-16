@@ -49,11 +49,19 @@ class _ParkingDetlsState extends State<ParkingDetls> {
                 ),
               ),
               BtnWdgt(
+                textClr: Colors.black,
                 name: 'Select Date & Time',
                 raduis: 10,
                 clr: Colors.white,
-                ontap: const DateAndTime(),
+                ontap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DateAndTime(),
+                      ));
+                },
               ),
+
               // BtnWdgt(
               //   name: 'ChooseParking Slot',
               //   raduis: 10,
@@ -65,23 +73,31 @@ class _ParkingDetlsState extends State<ParkingDetls> {
         ),
       ),
       bottomNavigationBar: BtnWdgt(
+        textClr: Colors.black,
         name: 'Reserve Now',
         raduis: 21,
         clr: const Color.fromARGB(255, 76, 150, 115),
-        ontap: BookingConfirmation(),
+        ontap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => BookingConfirmation(),
+              ));
+        },
       ),
     );
   }
 }
+
 class SlotRemain extends StatelessWidget {
   const SlotRemain({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-                title: Text('HiLite Parking'),
-                subtitle: Text('5th,Calicut,Poovangal,Kerala 673014'),
-                trailing: Text('20 Slots'),
-              );
+      title: Text('HiLite Parking'),
+      subtitle: Text('5th,Calicut,Poovangal,Kerala 673014'),
+      trailing: Text('20 Slots'),
+    );
   }
 }

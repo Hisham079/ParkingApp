@@ -13,7 +13,7 @@ class History extends StatelessWidget {
   const History({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {  
     return Expanded(
       child: ListView.builder(
         physics: BouncingScrollPhysics(),

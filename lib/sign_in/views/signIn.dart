@@ -87,7 +87,7 @@ class _LoginpageState extends State<Loginpage> {
                                 scrollDirection: Axis.vertical,
                                 children: [
                                   Text('Email'),
-                                  TextField(
+                                  TextFormField(
                                     controller: _loginemail,
                                     decoration: InputDecoration(
                                         icon: Icon(Icons.mail_outline),

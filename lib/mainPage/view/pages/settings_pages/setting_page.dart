@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:focused_menu/focused_menu.dart';
+import 'package:focused_menu/modals.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,14 +14,21 @@ import 'package:parking/mainPage/view/pages/settings_pages/feedback.dart';
 import 'package:parking/mainPage/view/pages/settings_pages/notification.dart';
 import 'package:parking/mainPage/view/pages/settings_pages/my_vehicle.dart';
 import 'package:parking/mainPage/view/pages/settings_pages/payment/payment.dart';
+import 'package:parking/mainPage/view/pages/settings_pages/theme/bloc/theme_bloc.dart';
+import 'package:parking/mainPage/view/pages/settings_pages/theme/theme.dart';
 import 'package:parking/mainPage/view/pages/settings_pages/widget/vehicle.dart';
 
 import 'package:parking/mainPage/view/pages/settings_pages/profile.dart';
 import 'package:parking/mainPage/view/widget/settings_tile.dart';
 
-class SettingsPage extends StatelessWidget {
-  const SettingsPage({super.key});
 
+
+class SettingsPage extends StatelessWidget {
+   SettingsPage({super.key, this.themeBloc, this.change});
+   ThemeBloc? themeBloc;
+  bool? change;
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,15 +80,10 @@ class SettingsPage extends StatelessWidget {
                         arrow: Icons.arrow_forward_ios,
                         name: 'Notification',
                       ),
-                      InkWell(
-                        onTap: () {
-                          Get.to(Feeback());
-                        },
-                        child: Setting_tile(
-                          icn: Icons.feedback_outlined,
-                          arrow: Icons.arrow_forward_ios,
-                          name: 'Give feedback',
-                        ),
+                      Setting_tile(
+                        icn: Icons.feedback_outlined,
+                        arrow: Icons.arrow_forward_ios,
+                        name: 'Give feedback',
                       ),
                       Setting_tile(
                           icn: Icons.question_mark_rounded,
@@ -95,10 +99,32 @@ class SettingsPage extends StatelessWidget {
                         arrow: Icons.arrow_forward_ios,
                         name: 'Languages',
                       ),
-                      Setting_tile(
-                        icn: FontAwesomeIcons.circleHalfStroke,
-                        arrow: Icons.arrow_forward_ios,
-                        name: 'Theme',
+                      InkWell(
+                        onTap: () {
+                          Get.to(ThemePage());
+                        },
+                        child: FocusedMenuHolder(
+                          animateMenuItems: true,
+                          onPressed: () {},
+                          menuItems: <FocusedMenuItem>[
+                            FocusedMenuItem(
+                                title: Text('Light'), onPressed: () {}),
+                            FocusedMenuItem(
+                                backgroundColor: Colors.black87,
+                                title: Text(
+                                  'Dark',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                onPressed: () {
+                                   themeBloc!.add(ChangeThemeEvent(value: change!));
+                                })
+                          ],
+                          child: Setting_tile(
+                            icn: FontAwesomeIcons.circleHalfStroke,
+                            arrow: Icons.arrow_forward_ios,
+                            name: 'Theme',
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -120,8 +146,8 @@ class SettingsPage extends StatelessWidget {
                     child: Center(
                         child: Text(
                       'Log out',
-                      style:
-                          GoogleFonts.laila(fontSize: 16.sp, color: Colors.white),
+                      style: GoogleFonts.laila(
+                          fontSize: 16.sp, color: Colors.white),
                     ))),
               ],
             ),

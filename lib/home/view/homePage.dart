@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:parking/signUp/view/signupPage.dart';
 
+import '../../mainPage/view/mainPage.dart';
 import '../../sign_in/views/signIn.dart';
 
 class Homepage extends StatefulWidget {
@@ -100,7 +101,16 @@ class _HomepageState extends State<Homepage> {
                       ),
                     )),
               ),
-            )
+            ),
+            TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MainPage(),
+                              ));
+                        },
+                        child: Text('For Test'))
           ],
         ),
       ),

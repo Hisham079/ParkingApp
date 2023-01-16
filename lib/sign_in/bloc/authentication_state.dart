@@ -8,8 +8,9 @@ class AuthenticationInitial extends AuthenticationState {}
 class LoginSuccess extends AuthenticationState {}
 
 class LoginFailed extends AuthenticationState {
-  String error_message;
   LoginFailed({required this.error_message});
+  String error_message;
+  
 }
 
 

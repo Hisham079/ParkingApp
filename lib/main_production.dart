@@ -9,5 +9,5 @@ import 'package:parking/app/app.dart';
 import 'package:parking/bootstrap.dart';
 
 void main() {
-  bootstrap(() => const App());
+  bootstrap(() =>  App());
 }

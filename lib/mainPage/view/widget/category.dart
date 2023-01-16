@@ -3,12 +3,10 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class Category extends StatelessWidget {
   Category({super.key, required this.icn, required this.name});
   IconData icn;
   String name;
-
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +15,9 @@ class Category extends StatelessWidget {
       width: 106.w,
       // color: Colors.white,
       decoration: BoxDecoration(
-        color: Color.fromARGB(95, 223, 221, 221),
-        borderRadius: BorderRadius.circular(10.r),
-      ),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10.r),
+          boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 5)]),
       child: Column(
         children: [
           Padding(
