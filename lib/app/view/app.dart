@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:parking/home/view/homePage.dart';
 import 'package:parking/l10n/l10n.dart';
+import '../modules/splashScreen/view/splashScreen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -31,7 +31,7 @@ class App extends StatelessWidget {
             GlobalMaterialLocalizations.delegate,
           ],
           supportedLocales: AppLocalizations.supportedLocales,
-          home: Homepage(),
+          home: SplashScreen(),
         );
       },
     );
